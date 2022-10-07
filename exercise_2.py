@@ -5,10 +5,7 @@ class Category:
         self.no_of_product = 0
         self.parent = parent
         self.display_name = self.name
-
-        # Change
         self.display_name1()
-        # Change
 
     def display_category(self):
         print("CategoryName : ", self.name)
@@ -68,39 +65,18 @@ childofc3 = Category("Audi", 3, c3)
 
 #List of Products
 
-# pro1 = Product("Milk bottle", 1, plastic, 225)
-# pro2 = Product("Lily’s Dark", 2, chocolate, 100)
-# pro3 = Product("Audi Q3", 3, vehicle, 1200000)
-# pro4 = Product("Lindt Dark", 2, chocolate, 400)
-#
-# pro5 = Product("Wet food storage", 1, plastic, 300)
-# pro6 = Product("Audi A8", 3, vehicle, 2500000)
-# pro7 = Product("Hu Simple Dark", 2, chocolate, 500)
-# pro8 = Product("Audi Q8", 3, vehicle, 3500000)
-#
-# pro9 = Product("Kitchen helper", 1, plastic, 3000)
-# pro10 = Product("Audi A6", 3, vehicle, 4500000)
-# pro11 = Product("Chocolove Dark", 2, chocolate, 600)
-# pro12 = Product("Freezer Storage", 1, plastic, 450)
-#
-# pro13 = Product("Fan", 4, electric, 1250)
-# pro14 = Product("TubeLight", 4, electric, 45)
-#
-# pro15 = Product("Asian Paint", 5, chemical, 850)
-# pro16 = Product("Dulux Paint", 5, chemical, 650)
+pro1 = Product("Milk bottle", 1, plastic, 225)
+pro2 = Product("Lily’s Dark", 2, chocolate, 100)
+pro3 = Product("Audi Q3", 3, vehicle, 1200000)
+pro4 = Product("Lindt Dark", 2, chocolate, 400)
 
-pro1 = Product("Milk bottle", 1, c1, 225)
-pro2 = Product("Lily’s Dark", 2, c2, 100)
-pro3 = Product("Audi Q3", 3, c3, 1200000)
-pro4 = Product("Lindt Dark", 2, c2, 400)
+pro5 = Product("Wet food storage", 1, plastic, 300)
+pro6 = Product("Audi A8", 3, vehicle, 2500000)
+pro7 = Product("Hu Simple Dark", 2, chocolate, 500)
+pro8 = Product("Audi Q8", 3, vehicle, 3500000)
 
-pro5 = Product("Wet food storage", 1, c1, 300)
-pro6 = Product("Audi A8", 3, c3, 2500000)
-pro7 = Product("Hu Simple Dark", 2, c2, 500)
-pro8 = Product("Audi Q8", 3, c3, 3500000)
-
-pro9 = Product("Kitchen helper", 1, c1, 3000)
-pro10 = Product("Audi A6", 3, c3, 4500000)
+pro9 = Product("Kitchen helper", 1, plastic, 3000)
+pro10 = Product("Audi A6", 3, vehicle, 4500000)
 pro11 = Product("Chocolove Dark", 2, chocolate, 600)
 pro12 = Product("Freezer Storage", 1, plastic, 450)
 
@@ -109,6 +85,27 @@ pro14 = Product("TubeLight", 4, electric, 45)
 
 pro15 = Product("Asian Paint", 5, chemical, 850)
 pro16 = Product("Dulux Paint", 5, chemical, 650)
+
+# pro1 = Product("Milk bottle", 1, c1, 225)
+# pro2 = Product("Lily’s Dark", 2, c2, 100)
+# pro3 = Product("Audi Q3", 3, c3, 1200000)
+# pro4 = Product("Lindt Dark", 2, c2, 400)
+#
+# pro5 = Product("Wet food storage", 1, c1, 300)
+# pro6 = Product("Audi A8", 3, c3, 2500000)
+# pro7 = Product("Hu Simple Dark", 2, c2, 500)
+# pro8 = Product("Audi Q8", 3, c3, 3500000)
+#
+# pro9 = Product("Kitchen helper", 1, c1, 3000)
+# pro10 = Product("Audi A6", 3, c3, 4500000)
+# pro11 = Product("Chocolove Dark", 2, chocolate, 600)
+# pro12 = Product("Freezer Storage", 1, plastic, 450)
+#
+# pro13 = Product("Fan", 4, electric, 1250)
+# pro14 = Product("TubeLight", 4, electric, 45)
+#
+# pro15 = Product("Asian Paint", 5, chemical, 850)
+# pro16 = Product("Dulux Paint", 5, chemical, 650)
 
 
 #c1.display_name1()
