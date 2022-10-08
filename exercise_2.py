@@ -18,10 +18,7 @@ class Category:
     def display_name1(self):
         count = self
         while (count.parent != None):
-            #if self.parent:
-                #print("Parent", self.parent)
-                count.display_name = f'{count.parent.name} > {count.display_name}'
-                #print("display_name", self.display_name)
+                count.display_name = f'{count.parent.name} > {self.display_name}'
                 count = count.parent
 
 
@@ -86,34 +83,6 @@ pro14 = Product("TubeLight", 4, electric, 45)
 pro15 = Product("Asian Paint", 5, chemical, 850)
 pro16 = Product("Dulux Paint", 5, chemical, 650)
 
-# pro1 = Product("Milk bottle", 1, c1, 225)
-# pro2 = Product("Lily’s Dark", 2, c2, 100)
-# pro3 = Product("Audi Q3", 3, c3, 1200000)
-# pro4 = Product("Lindt Dark", 2, c2, 400)
-#
-# pro5 = Product("Wet food storage", 1, c1, 300)
-# pro6 = Product("Audi A8", 3, c3, 2500000)
-# pro7 = Product("Hu Simple Dark", 2, c2, 500)
-# pro8 = Product("Audi Q8", 3, c3, 3500000)
-#
-# pro9 = Product("Kitchen helper", 1, c1, 3000)
-# pro10 = Product("Audi A6", 3, c3, 4500000)
-# pro11 = Product("Chocolove Dark", 2, chocolate, 600)
-# pro12 = Product("Freezer Storage", 1, plastic, 450)
-#
-# pro13 = Product("Fan", 4, electric, 1250)
-# pro14 = Product("TubeLight", 4, electric, 45)
-#
-# pro15 = Product("Asian Paint", 5, chemical, 850)
-# pro16 = Product("Dulux Paint", 5, chemical, 650)
-
-
-#c1.display_name1()
-# c2.display_name1()
-# c3.display_name1()
-# c4.display_name1()
-# c5.display_name1()
-
 
 c1.display_category()
 c2.display_category()
@@ -121,19 +90,6 @@ c3.display_category()
 c4.display_category()
 c5.display_category()
 
-# childofc1.display_category()
-# childofc2.display_category()
-# childofc3.display_category()
-#
-#childofc1.display_name1()
-# childofc2.display_name1()
-# childofc3.display_name1()
-
-plastic.display_category()
-chocolate.display_category()
-vehicle.display_category()
-electric.display_category()
-chemical.display_category()
 
 pro1.display_product()
 pro2.display_product()
