@@ -15,6 +15,7 @@ class Category:
         print("CategoryCode : ", self.code)
         print("dispaly_name : ", self.display_name)
         print("no of products:", self.no_of_product)
+        print("Name of all Products : ", self.product)
         print()
 
     def display_name1(self):
@@ -33,6 +34,7 @@ class Product:
         self.no_of_product = self.code + 1
         category.no_of_product = category.no_of_product + 1
         self.price = price
+        category.product.append(self.name)
 
     def display_product(self):
         print("ProductName : ", self.name)
@@ -64,36 +66,44 @@ childofc1 = Category("Water container", c1)
 childofc2 = Category("Amul", c2)
 childofc3 = Category("Audi", c3)
 
-#List of Products
+#Name of All Products
+
+pro1 = Product("Water bottle", c1, 225)
+pro2 = Product("Lily’s Dark", c2, 100)
+pro3 = Product("Audi Q3", c3, 1200000)
+pro4 = Product("Lindt Dark", c2, 400)
+pro5 = Product("Wet food storage", c1, 300)
+pro6 = Product("Audi A8", c3, 2500000)
+pro7 = Product("Hu Simple Dark", c2, 500)
+pro8 = Product("Audi Q8", c3, 3500000)
+pro9 = Product("Kitchen helper", c1, 3000)
+pro10 = Product("Audi A6", c3, 4500000)
+pro11 = Product("Chocolove Dark", c2, 600)
+pro12 = Product("Freezer Storage", c1, 450)
+pro13 = Product("Fan", c4, 4500)
+pro14 = Product("i20", vehicle, 340000)
+pro15 = Product("Fruit & Nuts", chocolate, 340)
+pro16 = Product("Light & series", electric, 940)
+pro17 = Product("Tubelight", electric, 125)
+pro18 = Product("Asian Paint", chemical, 3000)
+pro19 = Product("Dulux Paint", chemical, 2500)
+pro20 = Product("Super Paint", chemical, 1000)
+
+#List of category
 
 category_list = [plastic, chocolate, vehicle, c1, c2, c3, c4, c5, childofc1, childofc2, childofc3, electric, chemical]
 
+#List of product
 
-product_list = [
-    Product("Water bottle", c1, 225),
-    Product("Lily’s Dark", c2, 100),
-    Product("Audi Q3", c3, 1200000),
-    Product("Lindt Dark", c2, 400),
-    Product("Wet food storage", c1, 300),
-    Product("Audi A8", c3, 2500000),
-    Product("Hu Simple Dark", c2, 500),
-    Product("Audi Q8", c3, 3500000),
-    Product("Kitchen helper", c1, 3000),
-    Product("Audi A6", c3, 4500000),
-    Product("Chocolove Dark", c2, 600),
-    Product("Freezer Storage", c1, 450),
-    Product("Fan", c4, 4500),
-    Product("i20", vehicle, 340000),
-    Product("Fruit & Nuts", chocolate, 340),
-    Product("Light & series", electric, 940),
-    Product("Tubelight", electric, 125),
-    Product("Asian Paint", chemical, 3000),
-    Product("Dulux Paint", chemical, 2500),
-    Product("Super Paint", chemical, 1000),
-]
+product_list = [pro1, pro2, pro3, pro4, pro5, pro6, pro7, pro8, pro9, pro10, pro11, pro12, pro13, pro14, pro15,
+                pro16, pro17, pro18, pro19, pro20]
+
 
 for category in category_list:
     category.display_category()
 for product in product_list:
     product.display_product()
+
+
+
 
