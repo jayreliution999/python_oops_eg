@@ -36,12 +36,23 @@ class Product:
         self.price = price
         category.product.append(self.name)
 
+
     def display_product(self):
         print("ProductName : ", self.name)
         print("ProductCode : ", self.code)
         print("Category : ", self.category)
         print("Price : ", self.price)
         print("\n")
+
+    def name_sorting(category_list):
+        c_list = []
+        for i in range(0, len(category_list) - 1):
+            for j in range(len(category_list) - 1):
+                if (category_list[j].name.lower() > category_list[j+1].name.lower()):
+                    category_list[j], category_list[j+1] = category_list[j+1], category_list[j]
+        for rec in category_list:
+             c_list.append(rec.name)
+        return print(c_list)
 
 
 #Parent Object
@@ -103,6 +114,8 @@ for category in category_list:
     category.display_category()
 for product in product_list:
     product.display_product()
+
+Product.name_sorting(category_list)
 
 
 
