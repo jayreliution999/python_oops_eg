@@ -26,7 +26,7 @@ class Category:
 
 class Product:
     codep = 0
-    def __init__(self, name, category, price):
+    def __init__(self, name, category, price, stock_at_location={}):
         self.name = name
         self.code = Product.codep + 1
         Product.codep = Product.codep + 1
@@ -35,6 +35,7 @@ class Product:
         category.no_of_product = category.no_of_product + 1
         self.price = price
         category.product.append(self.name)
+        self.stock_at_location = stock_at_location
 
 
     def display_product(self):
