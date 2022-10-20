@@ -24,7 +24,21 @@ class Movement:
         self.to_location = to_location
         self.product = product
         self.quantity = quantity
+        #self.product.stock_at_location.update({self.to_location: self.quantity})
         self.display = f'quantity of product : {self.quantity} from {self.from_location.name} to {self.to_location.name}'
+
+        try:
+            if self.product.stock_at_location[self.from_location] >= self.quantity: #soap 40 >= 10
+                qun = self.product.stock_at_location[self.from_location] - self.quantity #40-10 = 30
+                self.product.stock_at_location.update({self.from_location: qun}) #rajkot = 30
+                qun1 = self.product.stock_at_location[self.to_location] + self.quantity
+                self.product.stock_at_location.update({self.to_location: qun1})#ahemdabad = 30
+
+
+        except Exception:
+            pass
+
+
 
     @staticmethod
     def movements_by_product(product):
@@ -35,6 +49,8 @@ class Movement:
                 print(item.display)
         if flag == 0:
             print("No Movement of product")
+
+        #return product.stock_at_location.update({m.to_location: Movement.quantity})
 
 
 #Location of object
@@ -52,7 +68,6 @@ for i in listof_location:
 
 chemical = Category("Chemical")
 
-
 soap = Product("Soap", chemical, 100, {rajkot: 40, ahemdabad: 20, baroda: 10})
 detergent = Product("Detergent", chemical, 75, {ahemdabad: 10, surat: 20, baroda: 40})
 toothpaste = Product("Toothpaste", chemical, 45, {rajkot: 50, baroda: 30, ahemdabad: 20})
@@ -60,8 +75,9 @@ chalk = Product("Chalk", chemical, 65, {surat: 30, rajkot: 10, ahemdabad: 40})
 marble = Product("Marble", chemical, 50, {baroda: 25, rajkot: 30, surat: 20})
 
 listof_product = [soap, detergent, toothpaste, chalk, marble]
+
 for i in listof_product:
-    print(i.name)
+    print(i.name) #name of product
     for j in i.stock_at_location: #print dictionary of location name,quntity value
         print(f'{j.name} -> {i.stock_at_location[j]}')
     print()
@@ -75,12 +91,11 @@ movement3 = Movement(ahemdabad, baroda, toothpaste, 25)
 movement4 = Movement(baroda, surat, chalk, 4)
 movement5 = Movement(ahemdabad, surat, marble, 0)
 
-
 listof_movement = [movement1, movement2, movement3, movement4, movement5]
 
 for i in listof_product:
-    print(i.name)
-    Movement.movements_by_product(i)
+    print(i.name) #name of product
+    Movement.movements_by_product(i) #Movement of Product
 
 print("----------------------------")
 print("product list by location : ")
