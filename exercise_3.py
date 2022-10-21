@@ -33,10 +33,10 @@ class Movement:
 
                 if self.product.stock_at_location[self.from_location] >= self.quantity:  # 40 >=20
                     qun = self.product.stock_at_location[self.from_location] - self.quantity  # 40-20=20
-                    self.product.stock_at_location.update({self.from_location: qun})  # {jamnagar,20}
-                    if self.to_location in self.product.stock_at_location:  # {bhavnagar}it check location is available or not
+                    self.product.stock_at_location.update({self.from_location: qun})  # {20}
+                    if self.to_location in self.product.stock_at_location:
                         qun1 = self.product.stock_at_location[self.to_location] + self.quantity  # 10+20
-                        self.product.stock_at_location.update({self.to_location: qun1})  # {bhavnagar,30}
+                        self.product.stock_at_location.update({self.to_location: qun1})  
                 else:
                     #     # if not available location it add both location and quantity
                     self.product.stock_at_location.update({self.to_location: self.quantity})
