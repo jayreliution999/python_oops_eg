@@ -28,22 +28,26 @@ class Movement:
 
         try:
             print('\nproduct_name:', product.name, '\nFrom_location: ->', self.from_location.name, 'To_location: ->',
-                  self.to_location.name, 'quantity: ->', self.quantity)
+                self.to_location.name, 'quantity: ->', self.quantity)
             if self.from_location in self.product.stock_at_location:
 
-                if self.product.stock_at_location[self.from_location] >= self.quantity:  # 40 >=20
-                    qun = self.product.stock_at_location[self.from_location] - self.quantity  # 40-20=20
-                    self.product.stock_at_location.update({self.from_location: qun})  # {20}
-                    if self.to_location in self.product.stock_at_location:
-                        qun1 = self.product.stock_at_location[self.to_location] + self.quantity  # 10+20
-                        self.product.stock_at_location.update({self.to_location: qun1})  
-                else:
-                    #     # if not available location it add both location and quantity
-                    self.product.stock_at_location.update({self.to_location: self.quantity})
-                print(self.product.name, "done movement")
+                if self.product.stock_at_location[self.from_location] >= self.quantity:  # 40 >=10    for soap
+                    qun = self.product.stock_at_location[self.from_location] - self.quantity  # 40-10=30
+                    self.product.stock_at_location.update({self.from_location: qun})  # {rajkot,30}
+                    if self.to_location in self.product.stock_at_location:  # {ahemdabad}it check location is available or not
+                        qun1 = self.product.stock_at_location[self.to_location] + self.quantity  # 10+30
+                        self.product.stock_at_location.update({self.to_location: qun1})  # {ahemdabad,40}
+                        # print(self.product.name,"stock added")
+                    else:
+                         # if not available location it add both location and quantity
+                        self.product.stock_at_location.update({self.to_location: self.quantity})
 
-            else:
-                print(f"quantity no: {self.quantity} of {self.product.name} not available {self.from_location.name}")
+                    # print(self.product.name,"done movement")
+                    self.display = f'product quantity :{self.quantity} from {self.from_location.name} to {self.to_location.name}'
+
+                else:
+                    print(f"quantity no: {self.quantity} of {self.product.name} not available {self.from_location.name}")
+
         except Exception:
             print("no location for that product\n")
 
@@ -73,7 +77,7 @@ for i in listof_location:
 
 chemical = Category("Chemical")
 
-soap = Product("Soap", chemical, 100, {rajkot: 40, ahemdabad: 20, baroda: 10})
+soap = Product("Soap", chemical, 100, {rajkot: 40, ahemdabad: 30, baroda: 10})
 detergent = Product("Detergent", chemical, 75, {ahemdabad: 10, surat: 20, baroda: 40})
 toothpaste = Product("Toothpaste", chemical, 45, {rajkot: 50, baroda: 30, ahemdabad: 20})
 chalk = Product("Chalk", chemical, 65, {surat: 30, rajkot: 10, ahemdabad: 40})
